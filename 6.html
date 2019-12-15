@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div>div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            display: none;
+        }
+        div.active{
+            display: block;
+        }
+        input.active{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="button" class="active" value="首页">
+        <input type="button"  value="新闻">
+        <input type="button"  value="内容">
+        <div class="active">111</div>
+        <div>222</div>
+        <div>333</div>
+    </div>
+    <script>
+      
+        var oDiv=document.body.children[0]
+   
+
+        function Tab(parent){
+            this.divs=parent.getElementsByTagName('div')
+            this.btns=parent.getElementsByTagName('input')
+
+            for(var i=0;i<this.btns.length;i++){
+                this.btns[i].index=i;
+                this.btns[i].addEventListener('click',this.showDiv())
+
+            }
+        }
+        Tab.prototype.showDiv=function(){
+            var that=this;
+            return function(){
+                for(var i=0;i<this.btns.length;i++){
+                    that.btns[i].className=''
+                    that.divs[i].className=''
+                }
+                this.className='active';
+                that.divs[this.index].className='active'
+            }
+        }
+        var tab1=new Tab('oDiv')
+    </script>
+</body>
+</html>

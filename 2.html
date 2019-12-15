@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setTimeout(()=>{
+        //     console.log(1)
+        // })
+        // new Promise((resolve,reject)=>{
+        //     console.log(2)
+        //     resolve(3)
+        // }).then((val)=>{
+        //     console.log(val)
+        // }).catch(err=>{
+        //     console.log(4)
+        // })
+        // console.log(5)
+        // function fn(a){
+        //     console.log(a)
+        //     var a=2;
+        //     function a(){}
+        //         console.log(a)
+            
+        // }
+        // fn(1)
+
+            // var length=10;
+            // function fn(){
+            //     console.log(this.length)
+            // }
+            // var obj={
+            //     length:5,
+            //     method:function(fn){
+            //         fn();
+            //         arguments[0]();
+            //     }
+            // };
+            // obj.method(fn,1)
+                let arr = [2,2,3,5,5,3]
+            // for(var i = 0;i<arr.length-1;i++){
+            //     for(var j = i+1;j<arr.length-1;j++){
+            //         if(arr[i] == arr[j]){
+            //             arr.splice(j,1)
+            //         }
+            //     }
+            //     j--;
+            //     arr.length--;
+            // }
+            // console.log(arr)
+                // var newA = []
+                // for(var i = 0;i<arr.length-1;i++){
+                //    if(newA.indexOf(arr[i]) == -1){
+                //        newA.push(arr[i]);
+                //    }
+                // }
+                // console.log(newA)
+
+                // var newA = new Set(arr);
+                // newA = Array.from(newA);
+                // console.log(newA);
+
+                fn(2)(3)(4);
+                function fn(num){
+                    console.log(num)
+                    return fn;
+                }
+    </script>
+</body>
+</html>

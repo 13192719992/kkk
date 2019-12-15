@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj={
+            name:'asd',
+            age:12,
+            set:'女',
+            ex:{
+                name:'ddd',
+                xx:{
+                    name:'ff'
+                }
+            }
+        }
+
+        function deepCopy(obj){
+            var person={}
+            for(var prop in obj){
+                if(typeof obj[prop] ==Object){
+                    person[prop]=deepCopy(obj[prop])
+                }else{
+                    person[prop]=obj[prop]
+                }
+            }
+            return person
+
+        }
+        let obj1=deepCopy(obj)
+        console.log(obj1)
+        // var obj1={
+            
+        // }
+        // for(var key in obj){
+        //     obj1[key]=obj[key]
+        // }
+        // obj1.age=15
+        // console.log(obj)
+
+    </script>
+</body>
+</html>
